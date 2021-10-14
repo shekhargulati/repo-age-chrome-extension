@@ -1,0 +1,18 @@
+{
+    "name": "Github Repo Age",
+    "description": "Adds Github Repo Age",
+    "version": "1.0",
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://github.com/*"],
+        "js": ["content-script.js"]
+      }
+    ],
+    "browser_action": {
+      "default_title": "Github Repo Age"
+    },
+    "manifest_version": 2
+  }
