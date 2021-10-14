@@ -12,7 +12,7 @@ $ git clone git@github.com:shekhargulati/git@github.com:shekhargulati/repo-age-c
 
 Install with these steps:
 
-1. Go to the Chrome [extensions](chrome://extensions/) page.
+1. Go to the Chrome extensions(chrome://extensions/) page.
 2. Turn on *Developer mode* to enable loading *unpacked extensions*.
 3. Add the extension by clicking *Load Unpacked* button, and select the source directory.
 
