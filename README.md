@@ -7,7 +7,7 @@ This is a simple extension that shows a public Github repository first commit da
 To use, clone this repository to your computer.
 
 ```
-$ git clone git@github.com:shekhargulati/git@github.com:shekhargulati/repo-age-chrome-extension.git
+$ git clone git@github.com:shekhargulati/repo-age-chrome-extension.git
 ```
 
 Install with these steps:
