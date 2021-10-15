@@ -1,13 +1,13 @@
 # repo-age-chrome-extension
 
-This is a simple extension that adds shows a public Github repository first commit date and age. For example, below you can see Kubernetes first commit date and repo age.
+This is a simple extension that shows a public Github repository first commit date and age. For example, below you can see Kubernetes first commit date and repo age.
 
 ![](images/k8s.png)
 
 To use, clone this repository to your computer.
 
 ```
-$ git clone git@github.com:shekhargulati/git@github.com:shekhargulati/repo-age-chrome-extension.git
+$ git clone git@github.com:shekhargulati/repo-age-chrome-extension.git
 ```
 
 Install with these steps:
