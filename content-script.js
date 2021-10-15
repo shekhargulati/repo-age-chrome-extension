@@ -27,8 +27,8 @@ if (parts.length !== 2) {
 
 function formatDays(numberOfDays) {
     const years = Math.floor(numberOfDays / 365);
-    const months = Math.floor(numberOfDays % 365 / 30);
-    const days = Math.floor(numberOfDays % 365 % 30);
+    const months = Math.floor(numberOfDays % 365 / 30.41);
+    const days = Math.floor(numberOfDays % 365 % 30.41);
 
     const yearsDisplay = years > 0 ? years + (years == 1 ? " year, " : " years, ") : "";
     const monthsDisplay = months > 0 ? months + (months == 1 ? " month, " : " months, ") : "";
