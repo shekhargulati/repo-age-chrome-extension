@@ -6,20 +6,24 @@ const parts = path.split("/").filter(p => p.length > 0);
 if (parts.length !== 2) {
     console.log("Not running extension as it is not the repo home page");
 } else {
-    fetch(`https://api.github.com/repos/${parts[0]}/${parts[1]}`)
+    fetch(`https://api.github.com/repos/${parts[0]}/${parts[1]}/stats/contributors`)
         .then(r => {
             r.text().then(json => {
                 const parsed = JSON.parse(json);
-                const firstCommitDate = new Date(parsed.created_at);
-                const diffTime = Math.abs(new Date() - firstCommitDate);
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                const firstCommitDateEl = createElement("First Commit: " + firstCommitDate.toLocaleDateString('en-US', options));
-                const msg = `Repo Age: ${formatDays(diffDays)} old`;
-                const repoAgeEl = createElement(msg);
-                const root = document.querySelector('div.BorderGrid-cell');
-                root.appendChild(firstCommitDateEl);
-                root.appendChild(repoAgeEl);
+                if (parsed.length > 0 && parsed[0].weeks && parsed[0].weeks.length > 0) {
+                    const ts = parsed[0].weeks[0].w;
+                    const firstCommitDate = new Date(ts * 1000);
+                    const diffTime = Math.abs(new Date() - firstCommitDate);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    const firstCommitDateEl = createElement("First Commit: " + firstCommitDate.toLocaleDateString('en-US', options));
+                    const msg = `Repo Age: ${formatDays(diffDays)} old`;
+                    const repoAgeEl = createElement(msg);
+                    const root = document.querySelector('div.BorderGrid-cell');
+                    root.appendChild(firstCommitDateEl);
+                    root.appendChild(repoAgeEl);
+                }
+
             })
         });
 }
